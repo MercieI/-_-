@@ -1,0 +1,106 @@
+DESCRIPCIÓN DETALLADA DE LA INTERFAZ DE UNA PLATAFORMA DE MENSAJERÍA (AGNÓSTICA AL CANAL)
+
+1. ESTRUCTURA GENERAL DEL PANEL
+La interfaz se organiza visualmente por capas y bloques claramente diferenciados para ayudar a la navegación y el entendimiento de las operaciones disponibles. El diseño suele mantener una estética moderna, con un estilo "dashboard" limpio, con predominancia de colores neutros (grises claros) como base, y un color principal (generalmente azul, verde o púrpura) para resaltar acciones y estados. La tipografía es sans-serif, de lectura clara, con tamaños equilibrados para que los títulos sean visibles sin saturar.
+
+2. BARRA LATERAL IZQUIERDA
+- Siempre visible, anclada al borde izquierdo de la pantalla.
+- Fondo ligeramente más oscuro que el contenido principal (ej. gris #1E1E26 o #2A2A32).
+- Iconos y texto alineados verticalmente, con separación suficiente para evitar sensación de amontonamiento.
+- Al pasar el cursor por encima, los elementos cambian de color o muestran un subrayado suave.
+- Cuando se selecciona una sección, se ilumina con un marcador (barra vertical de color o resaltado de fondo).
+
+Secciones típicas:
+• Sesiones
+• Mensajes
+• Chats / Contactos
+• Webhooks
+• Logs
+• Ajustes
+• Documentación / API
+
+3. ENCABEZADO SUPERIOR
+- Ocupa la parte superior del panel principal.
+- Indica el estado general del servicio (conectado/estable, cargando, o con errores).
+- Incluye accesos rápidos a:
+  • Idioma
+  • Tema (claro / oscuro)
+  • Datos del usuario conectado
+  • Botón de “Crear nueva sesión” (usualmente destacado con color principal)
+
+4. PANTALLA DE SESIONES
+Se presenta como una cuadrícula o lista de tarjetas. Cada tarjeta contiene:
+- Nombre de la sesión (editable).
+- Estado representado con color:
+  • Verde → Operativa / Conectada
+  • Amarillo → Esperando autenticación / Código QR no escaneado
+  • Rojo → Sesión caída / Error
+- Acciones rápidas:
+  • Conectar / Desconectar
+  • Recargar autenticación
+  • Abrir consola de mensajes
+  • Ver detalles avanzados
+- Indicadores adicionales: tiempo en línea, última actividad, contador de mensajes procesados.
+
+5. AUTENTICACIÓN Y CÓDIGO QR
+- Aparece en una ventana modal o en una pantalla dedicada.
+- Fondo blanco y borde suave para centrar la atención.
+- El código QR se muestra grande, centrado, con instrucciones claras.
+- Texto de apoyo: pasos para escanear, recomendaciones y estado dinámico.
+
+6. CONSOLA DE MENSAJES
+Se divide en dos columnas:
+- Columna izquierda: historial de mensajes.
+  • Burbujas diferenciadas por origen:
+    - Entrantes → Burbujas grises o verde pálido
+    - Salientes → Burbujas con color primario
+  • Marcas de entrega y lectura.
+  • Fechas separadoras entre días.
+- Columna derecha: compositor de mensajes.
+  • Campo para escribir texto.
+  • Adjuntar archivos mediante botón o arrastre.
+  • Botón de enviar destacado.
+  • Selector de tipo de mensaje (texto, imagen, documento).
+
+7. LISTA DE CHATS Y CONTACTOS
+- Panel dividido en tres zonas (similar a una aplicación de mensajería moderna):
+  • Izquierda → lista de chats recientes.
+  • Centro → conversación activa.
+  • Derecha → detalles del contacto (nombre, etiquetas, notas, archivos compartidos).
+- Uso de bordes finos y separación para mantener claridad visual.
+
+8. WEBHOOKS
+- Tabla clara con columnas:
+  • Evento
+  • URL configurada
+  • Estado de verificación
+  • Último intento
+- Botón “Probar evento” con ventana emergente mostrando la respuesta de la URL.
+
+9. LOGS Y DIAGNÓSTICO
+- Consola con fondo oscuro para lectura cómoda.
+- Colores por nivel de severidad:
+  • INFO → Gris/Blanco
+  • WARN → Amarillo
+  • ERROR → Rojo
+- Filtros rápidos por sesión, fecha o tipo de evento.
+
+10. AJUSTES
+- Se estructura en categorías, cada una dentro de tarjetas o paneles plegables.
+- Incluye configuración de seguridad, claves de API, idioma, zona horaria y comportamientos avanzados.
+
+11. DOCUMENTACIÓN INTERACTIVA (API EXPLORER)
+- Estilo tipo “Swagger UI”.
+- Se listan los endpoints con botones para expandir detalles.
+- Cada endpoint muestra:
+  • Descripción
+  • Método HTTP (GET, POST, etc.)
+  • Parámetros aceptados
+  • Ejemplos de respuesta
+  • Botón “Probar” para ejecutar solicitudes reales.
+
+Este diseño, en conjunto, está pensado para:
+- Proporcionar control total sobre las conexiones y el flujo de mensajes.
+- Permitir depuración visual rápida.
+- Mantener facilidad de uso incluso para usuarios no técnicos.
+- Ser escalable en funcionalidad sin perder claridad.
